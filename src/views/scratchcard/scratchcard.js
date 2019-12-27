@@ -3,7 +3,7 @@ function Scratchcard(config) {
     // canvas元素
     canvas: null,
     // 直接全部刮开的百分比
-    showAllPercent: 65,
+    showAllPercent: 75,
     // 图片图层
     coverImg: null,
     // 纯色图层，如果图片图层值不为null，则纯色图层无效
@@ -35,8 +35,8 @@ Scratchcard.prototype = {
   _init: function() {
     var that = this
     this.ctx = this.canvas.getContext('2d')
-    this.offsetX = this.canvas.parentNode.offsetLeft
-    this.offsetY = this.canvas.parentNode.offsetTop
+    // this.offsetX = this.canvas.parentNode.offsetLeft
+    // this.offsetY = this.canvas.parentNode.offsetTop
     console.log(this.offsetX, this.offsetY)
     this._addEvent()
     if (this.config.coverImg) {
@@ -83,7 +83,7 @@ Scratchcard.prototype = {
       if (e.changedTouches) {
         e = e.changedTouches[e.changedTouches.length - 1]
       }
-      console.log('---', this._offset(this.canvas))
+      // console.log('---', this._offset(this.canvas))
       const x = (e.clientX + this.canvas.parentNode.parentNode.scrollLeft || e.pageX) - this._offset(this.canvas).left || 0
       const y = (e.clientY + this.canvas.parentNode.parentNode.scrollTop || e.pageY) - this._offset(this.canvas).top || 0
       if (this.ctx) {

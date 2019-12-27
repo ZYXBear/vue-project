@@ -167,7 +167,7 @@ export const constantRoutes = [
       path: 'scratchcard',
       name: 'scratchcard',
       component: () => import('@/views/scratchcard/index'),
-      meta: { title: '专属小可爱的开心刮刮乐', icon: 'dashboard' }
+      meta: { title: '开心刮刮乐', icon: 'dashboard' }
     }]
   },
 
